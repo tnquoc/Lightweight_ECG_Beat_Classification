@@ -6,9 +6,13 @@
 
 ## Dataset
 
-Please download and uncompressed in the root of this repository
-- Raw Dataset: [link](https://drive.google.com/file/d/16g5NXeenswcHerJCoPme28qeWImBYCaI/view?usp=sharing)
-- TFRecord: [link](https://drive.google.com/file/d/1RMUVK0ZBvk2zM-3saZBCEni2bQgfzGGb/view?usp=sharing)
+Raw Dataset:
+- Download and uncompressed in the root of this repository.
+- [link](https://drive.google.com/file/d/16g5NXeenswcHerJCoPme28qeWImBYCaI/view?usp=sharing)
+
+TFRecord:
+- Download and uncompressed in folder **train_test_cp**
+- TFRecord: [link](https://drive.google.com/file/d/1oTX6ArajTW8Jg2maWlrm591D2gCxxafx/view?usp=sharing)
 
 ## Training
 
