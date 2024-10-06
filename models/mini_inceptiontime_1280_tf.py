@@ -37,6 +37,7 @@ def MiniInceptionTimeFunctional(input_shape, in_channel=1, d_model=64, num_class
     x = layers.Conv1D(d_model, kernel_size=7, strides=1, padding='same', use_bias=True)(inputs)
     x = layers.ReLU()(x)
     x = layers.MaxPooling1D(2, 2)(x)
+    # x = layers.BatchNormalization()(x)
 
     # Shortcuts
     shortcut1 = x
@@ -49,9 +50,9 @@ def MiniInceptionTimeFunctional(input_shape, in_channel=1, d_model=64, num_class
     x = layers.Add()([x, shortcut1])
 
     # Projection layer
-    x = layers.Conv1D(2 * d_model, kernel_size=5, strides=1, padding='same', use_bias=True)(x)
+    x = layers.Conv1D(2 * d_model, kernel_size=5, strides=2, padding='same', use_bias=True)(x)
     x = layers.ReLU()(x)
-    x = layers.MaxPooling1D(2, 2)(x)
+    # x = layers.MaxPooling1D(2, 2)(x)
 
     # Shortcuts
     shortcut2 = x
@@ -64,14 +65,14 @@ def MiniInceptionTimeFunctional(input_shape, in_channel=1, d_model=64, num_class
     x = layers.Add()([x, shortcut2])
 
     # Projection layer
-    x = layers.Conv1D(4 * d_model, kernel_size=3, strides=1, padding='same', use_bias=True)(x)
+    x = layers.Conv1D(4 * d_model, kernel_size=3, strides=2, padding='same', use_bias=True)(x)
     x = layers.ReLU()(x)
-    x = layers.MaxPooling1D(2, 2)(x)
+    # x = layers.MaxPooling1D(2, 2)(x)
 
     # Shortcuts
     shortcut3 = x
 
-    # BaseBlock 5 and 6
+    # BaseBlock 3 and 4
     x = BaseBlockFunctional(x, 4 * d_model)
     x = BaseBlockFunctional(x, 4 * d_model)
 
