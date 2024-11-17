@@ -20,3 +20,10 @@ Keras: run ```python main_tf.py``` to train and testing inference, the checkpoin
 
 ## Inference
 Keras: run ```python main_tf_inference.py``` for inference. The results is printed on terminal and the confusion matrix is displayed in the **test_cm.png**.
+
+## Running with GPU
+If your local machine has a GPU, the code will default to running on the GPU. To force it to run on the CPU instead, add the following lines to your Python script:
+```
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+```
